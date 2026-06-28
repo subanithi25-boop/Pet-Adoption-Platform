@@ -1,0 +1,169 @@
+
+.dashboard-page {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: white;
+  text-align: center;
+  font-family: Arial;
+}
+.title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  width: 180px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.stat-card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.stat-card.total {
+  border-left: 4px solid #ffffff;
+}
+
+.stat-card.pending {
+  border-left: 4px solid #ffb703;
+}
+
+.stat-card.approved {
+  border-left: 4px solid #4caf50;
+}
+
+.stat-card.rejected {
+  border-left: 4px solid #f44336;
+}
+
+.empty-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  padding: 50px;
+  border-radius: 16px;
+  max-width: 420px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.empty-card .emoji {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.empty-card h2 {
+  margin: 10px 0;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th {
+  padding: 15px;
+  background: rgba(255,255,255,0.18);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 14px;
+}
+
+tr:hover {
+  background: rgba(255,255,255,0.06);
+  transition: 0.3s;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status.pending {
+  background: #ffb703;
+  color: black;
+}
+
+.status.approved {
+  background: #4caf50;
+  color: white;
+}
+
+.status.rejected {
+  background: #f44336;
+  color: white;
+}
+
+button {
+  margin: 3px;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+/* ACTION BUTTONS */
+.approve {
+  background: #4caf50;
+  color: white;
+}
+
+.reject {
+  background: #f44336;
+  color: white;
+}
+
+.delete {
+  background: #777;
+  color: white;
+}

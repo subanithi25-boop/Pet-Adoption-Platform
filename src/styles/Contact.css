@@ -1,0 +1,94 @@
+
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: Arial;
+  padding: 20px;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.contact-card h2 {
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+.input-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.input-box:focus-within {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 0 10px rgba(108, 99, 255, 0.4);
+}
+
+.input-box svg {
+  margin-right: 10px;
+  color: #fff;
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff !important;
+  font-size: 14px;
+  caret-color: #fff;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff6b6b, #6c63ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
