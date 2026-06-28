@@ -6,8 +6,6 @@ import Adopt from "./pages/Adopt";
 import PetDetails from "./pages/PetDetails";
 import Favorites from "./pages/Favorites";
 import Dashboard from "./pages/Dashboard";
-import Booking from "./pages/Booking";
-import Reviews from "./pages/Reviews";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import AdoptionForm from "./pages/AdoptionForm";
@@ -30,8 +28,6 @@ function App() {
         <Route path="/pet/:id" element={<PetDetails />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/reviews" element={<Reviews />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/adopt-form" element={<AdoptionForm />} />
