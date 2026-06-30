@@ -19,14 +19,14 @@ function Adopt() {
 
   const fetchPets = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/pets");
+      const res = await axios.get(
+  "https://pet-adoption-platform-1-aa5h.onrender.com/api/pets"
+);
       setPets(res.data);
     } catch (error) {
       console.log(error);
     }
   };
-
-  // ✅ SAFE FILTER LOGIC (FIXED)
   const filteredPets = pets.filter((pet) => {
     const searchText = search.toLowerCase().trim();
 

@@ -42,22 +42,22 @@ function AdoptionForm() {
 
       const token = localStorage.getItem("token");
 
-      await axios.post(
-        "http://localhost:5000/api/adoptions",
-        {
-          pet: pet._id,            
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          address: formData.address,
-          status: "Pending"       
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
+     await axios.post(
+  "https://pet-adoption-platform-1-aa5h.onrender.com/api/adoptions",
+  {
+    pet: pet._id,
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    address: formData.address,
+    status: "Pending"
+  },
+  {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+);
 
       alert("Adoption request submitted ❤️");
 

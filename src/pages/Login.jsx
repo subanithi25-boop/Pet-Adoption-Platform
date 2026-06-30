@@ -26,9 +26,9 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        formData
-      );
+  "https://pet-adoption-platform-1-aa5h.onrender.com/api/auth/login",
+  formData
+);
 
       console.log("Login Response:", res.data);
 

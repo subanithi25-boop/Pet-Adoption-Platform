@@ -22,8 +22,8 @@ function PetDetails() {
     const fetchPet = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/pets/${id}`
-        );
+  `https://pet-adoption-platform-1-aa5h.onrender.com/api/pets/${id}`
+);
         setPet(res.data);
       } catch (err) {
         console.log(err);

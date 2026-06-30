@@ -1,0 +1,1 @@
+export const API_URL = "https://pet-adoption-platform-1-aa5h.onrender.com";

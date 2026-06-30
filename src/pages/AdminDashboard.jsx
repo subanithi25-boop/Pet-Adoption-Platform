@@ -15,7 +15,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/adoptions",
+        "https://pet-adoption-platform-1-aa5h.onrender.com/api/adoptions",
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -36,7 +36,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/adoptions/approve/${id}`,
+        `https://pet-adoption-platform-1-aa5h.onrender.com/api/adoptions/approve/${id}`,
         {},
         {
           headers: {
@@ -57,7 +57,7 @@ function AdminDashboard() {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:5000/api/adoptions/reject/${id}`,
+        `https://pet-adoption-platform-1-aa5h.onrender.com/api/adoptions/reject/${id}`,
         {},
         {
           headers: {
@@ -86,71 +86,47 @@ function AdminDashboard() {
       ) : (
         <div className="requests">
           {adoptions.map((item) => (
-            <div
-              className="request-card"
-              key={item._id}
-            >
+            <div className="request-card" key={item._id}>
               <h3>{item.name}</h3>
 
               <p>
-                <strong>Pet:</strong>{" "}
-                {item.pet?.name}
+                <strong>Pet:</strong> {item.pet?.name}
               </p>
 
               <p>
-                <strong>Email:</strong>{" "}
-                {item.email}
+                <strong>Email:</strong> {item.email}
               </p>
 
               <p>
-                <strong>Phone:</strong>{" "}
-                {item.phone}
+                <strong>Phone:</strong> {item.phone}
               </p>
 
               <p>
-                <strong>Address:</strong>{" "}
-                {item.address}
+                <strong>Address:</strong> {item.address}
               </p>
 
               <p>
-                <strong>Status:</strong>{" "}
-                {item.status}
+                <strong>Status:</strong> {item.status}
               </p>
 
               {item.approvedAt && (
                 <p>
                   <strong>Approved On:</strong>{" "}
-                  {new Date(
-                    item.approvedAt
-                  ).toLocaleString()}
+                  {new Date(item.approvedAt).toLocaleString()}
                 </p>
               )}
 
               <div className="buttons">
                 <button
-                  onClick={() =>
-                    approveAdoption(
-                      item._id
-                    )
-                  }
-                  disabled={
-                    item.status ===
-                    "Approved"
-                  }
+                  onClick={() => approveAdoption(item._id)}
+                  disabled={item.status === "Approved"}
                 >
                   Approve ✅
                 </button>
 
                 <button
-                  onClick={() =>
-                    rejectAdoption(
-                      item._id
-                    )
-                  }
-                  disabled={
-                    item.status ===
-                    "Rejected"
-                  }
+                  onClick={() => rejectAdoption(item._id)}
+                  disabled={item.status === "Rejected"}
                 >
                   Reject ❌
                 </button>
