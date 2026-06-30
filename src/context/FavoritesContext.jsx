@@ -17,21 +17,20 @@ export function FavoritesProvider({ children }) {
       if (!token) return;
 
       const res = await axios.get(
-        "https://pet-adoption-platform-1-aa5h.onrender.com/api/favorites",
+        "http://localhost:5000/api/favorites",
         {
           headers: {
             Authorization: `Bearer ${token}`
           }
         }
       );
-
       const pets = res.data.map((fav) => fav.pet);
+
       setFavorites(pets);
     } catch (error) {
       console.log("Fetch favorites error:", error);
     }
   };
-
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -39,7 +38,6 @@ export function FavoritesProvider({ children }) {
       fetchFavorites();
     }
   }, []);
-
   const toggleFavorite = async (pet) => {
     try {
       const token = localStorage.getItem("token");
@@ -52,10 +50,9 @@ export function FavoritesProvider({ children }) {
       const exists = favorites.some(
         (item) => item._id === pet._id
       );
-
       if (exists) {
         await axios.delete(
-          `https://pet-adoption-platform-1-aa5h.onrender.com/api/favorites/${pet._id}`,
+          `http://localhost:5000/api/favorites/${pet._id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -66,9 +63,10 @@ export function FavoritesProvider({ children }) {
         setFavorites((prev) =>
           prev.filter((item) => item._id !== pet._id)
         );
-      } else {
+      }
+      else {
         await axios.post(
-          "https://pet-adoption-platform-1-aa5h.onrender.com/api/favorites",
+          "http://localhost:5000/api/favorites",
           {
             pet: pet._id
           },

@@ -32,7 +32,7 @@ function Register() {
 
     try {
       await axios.post(
-  "https://pet-adoption-platform-1-aa5h.onrender.com/api/auth/register",
+  "http://localhost:5000/api/auth/register",
   formData
 );
 

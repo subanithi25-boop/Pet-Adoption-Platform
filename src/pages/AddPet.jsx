@@ -49,15 +49,16 @@ function AddPet() {
       }
 
       await axios.post(
-  "https://pet-adoption-platform-1-aa5h.onrender.com/api/pets",
-  data,
-  {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data"
-    }
-  }
-);
+        "http://localhost:5000/api/pets",
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type":
+              "multipart/form-data"
+          }
+        }
+      );
 
       alert("Pet added successfully!");
 

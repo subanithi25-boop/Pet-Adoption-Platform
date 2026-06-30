@@ -15,7 +15,7 @@ function Dashboard() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-  "https://pet-adoption-platform-1-aa5h.onrender.com/api/adoptions/my",
+        "http://localhost:5000/api/adoptions/my",
         {
           headers: {
             Authorization: `Bearer ${token}`,

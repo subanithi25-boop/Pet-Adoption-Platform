@@ -16,7 +16,7 @@ function Favorites() {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "https://pet-adoption-platform-1-aa5h.onrender.com/api/favorites",
+        "http://localhost:5000/api/favorites",
         {
           headers: {
             Authorization: `Bearer ${token}`
@@ -35,7 +35,7 @@ function Favorites() {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `https://pet-adoption-platform-1-aa5h.onrender.com/api/favorites/${favoriteId}`,
+        `http://localhost:5000/api/favorites/${favoriteId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

@@ -20,7 +20,7 @@ function Adopt() {
   const fetchPets = async () => {
     try {
       const res = await axios.get(
-  "https://pet-adoption-platform-1-aa5h.onrender.com/api/pets"
+  "http://localhost:5000/api/pets"
 );
       setPets(res.data);
     } catch (error) {
